@@ -17,6 +17,9 @@ app.use(express.json());
 app.use(expressValidator());
 app.use(morgan("dev"));
 
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/category", require("./routes/category"));
+app.use("/api/product", require("./routes/product"));
 app.use("/api/user", require("./routes/user"));
 
 app.listen(port, () => console.log(`app running on port:${port}`));
